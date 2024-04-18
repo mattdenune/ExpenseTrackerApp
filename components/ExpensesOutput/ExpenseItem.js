@@ -9,7 +9,7 @@ export default function ExpenseItem({description, amount, date}) {
       <View style={styles.expenseItem}>
         <View>
           <Text style={[styles.textBase, styles.description]}>{description}</Text>
-          <Text style={styles.textBase}>{date}</Text>
+          <Text style={styles.textBase}>{date.toString()}</Text>
         </View>
         <View style={styles.amountContainer}>
           <Text style={styles.amount}>{amount}</Text>
