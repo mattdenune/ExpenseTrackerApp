@@ -5,8 +5,12 @@ import { GlobalStyles } from "../../constants/styles";
 import { getFormattedDate } from "../../util/date";
 
 export default function ExpenseItem({description, amount, date}) {
+
+	function expensePressHandler() {}
+
+
   return (
-    <Pressable>
+    <Pressable onPress={expensePressHandler}>
       <View style={styles.expenseItem}>
         <View>
           <Text style={[styles.textBase, styles.description]}>{description}</Text>

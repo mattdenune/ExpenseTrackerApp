@@ -9,6 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import RecentExpense from "./screens/RecentExpenses";
 import AllExpenses from "./screens/AllExpenses";
 import ManageExpenses from "./screens/ManageExpense";
+import IconButton from "./components/UI/IconButton";
 
 import { GlobalStyles } from "./constants/styles";
 
@@ -23,6 +24,7 @@ function ExpensesOverview() {
         headerTintColor: "white",
         tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
         tabBarActiveTintColor: GlobalStyles.colors.accent500,
+        headerRight: ({tintColor}) => <IconButton icon='add' size={24} color={tintColor} onPress={() => {}} />
       }}
     >
       <BottomTabs.Screen name="RecentExpenses" component={RecentExpense} options={{
