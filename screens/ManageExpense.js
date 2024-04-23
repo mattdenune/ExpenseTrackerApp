@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function ManageExpenses() {
+export default function ManageExpense() {
   return (
     <View>
-      <Text>ManageExpenses</Text>
+      <Text>ManageExpense</Text>
     </View>
   )
 }

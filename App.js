@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import RecentExpense from "./screens/RecentExpenses";
 import AllExpenses from "./screens/AllExpenses";
-import ManageExpenses from "./screens/ManageExpense";
+import ManageExpense from "./screens/ManageExpense";
 import IconButton from "./components/UI/IconButton";
 
 import { GlobalStyles } from "./constants/styles";
@@ -56,7 +56,7 @@ export default function App() {
             component={ExpensesOverview}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="ManageExpenses" component={ManageExpenses} />
+          <Stack.Screen name="ManageExpense" component={ManageExpense} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
