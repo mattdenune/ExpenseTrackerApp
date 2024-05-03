@@ -28,6 +28,19 @@ export default function ManageExpense({ route, navigation }) {
   }
 
   function confirmHandler() {
+    if (isEditing) {
+      ExpensesCtx.updateExpense(editedExpenseId, {
+        description: "Update Test",
+        amount: 20.99,
+        date: new Date("2024-05-04"),
+      });
+    } else {
+      ExpensesCtx.addExpense({
+        description: "Add Test",
+        amount: 19.99,
+        date: new Date("2024-05-03"),
+      });
+    }
     navigation.goBack();
   }
 
