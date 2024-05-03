@@ -12,11 +12,15 @@ export default function RecentExpense() {
     const today = new Date();
     const date7DaysAgo = getDateMinusDays(today, 7);
 
-    return (expense.date > date7DaysAgo) && (expense.date <= today);
+    return expense.date > date7DaysAgo && expense.date <= today;
   });
 
   return (
-    <ExpensesOutput expenses={recentExpenses} expensesPeriod="Last 7 Days" />
+    <ExpensesOutput
+      expenses={recentExpenses}
+      expensesPeriod="Last 7 Days"
+      fallbackText="No expenses registered for the last 7 days"
+    />
   );
 }
 
