@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
-import React, { useLayoutEffect } from "react";
+import React, { useContext, useLayoutEffect } from "react";
 
 import IconButton from "../components/UI/IconButton";
 import Button from "../components/UI/Button";
 import { GlobalStyles } from "../constants/styles";
+import { ExpensesContext } from "../store/expenses-context";
 
 export default function ManageExpense({ route, navigation }) {
+  const ExpensesCtx = useContext(ExpensesContext);
+
   const editedExpenseId = route.params?.expenseId;
   const isEditing = !!editedExpenseId;
 
@@ -16,6 +19,7 @@ export default function ManageExpense({ route, navigation }) {
   }, [navigation, isEditing]);
 
   function deleteExpenseHandler() {
+    ExpensesCtx.deleteExpense(editedExpenseId);
     navigation.goBack();
   }
 
@@ -34,7 +38,7 @@ export default function ManageExpense({ route, navigation }) {
           Cancel
         </Button>
         <Button style={styles.Button} onPress={confirmHandler}>
-          {isEditing ? 'Update' : 'Add'}
+          {isEditing ? "Update" : "Add"}
         </Button>
       </View>
       {isEditing && (
@@ -65,12 +69,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttons: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   button: {
     minWidth: 120,
-    marginHorizontal: 8
-  }
+    marginHorizontal: 8,
+  },
 });
