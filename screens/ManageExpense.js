@@ -5,6 +5,7 @@ import IconButton from "../components/UI/IconButton";
 import Button from "../components/UI/Button";
 import { GlobalStyles } from "../constants/styles";
 import { ExpensesContext } from "../store/expenses-context";
+import ExpenseForm from "../manageExpense/ExpenseForm";
 
 export default function ManageExpense({ route, navigation }) {
   const ExpensesCtx = useContext(ExpensesContext);
@@ -46,6 +47,7 @@ export default function ManageExpense({ route, navigation }) {
 
   return (
     <View style={styles.container}>
+      <ExpenseForm />
       <View style={styles.buttons}>
         <Button style={styles.Button} mode="flat" onPress={cancelHandler}>
           Cancel
