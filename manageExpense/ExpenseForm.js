@@ -7,18 +7,17 @@ export default function ExpenseForm() {
 
   return (
     <View>
-      <Input label="Amount" TextInputConfig={{
+      <Input label="Amount" textInputConfig={{
         keyboardType: 'decimal-pad',
         onChangeText: amountChangedHandler,
       }} />
-      <Input label="Date" TextInputConfig={{
+      <Input label="Date" textInputConfig={{
         placeholder: 'YYYY-MM-DD',
         maxLength: 10,
         onChangeText: () => {}
       }} />
-      <Input label="Description" TextInputConfig={{
-        multiLine: true,
-        
+      <Input label="Description" textInputConfig={{
+        multiline: true,
       }} />
     </View>
   )
