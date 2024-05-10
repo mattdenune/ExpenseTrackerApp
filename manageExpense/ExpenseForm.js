@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import Input from "./Input";
 import Button from "../components/UI/Button";
 
-
-export default function ExpenseForm({onCancel, onSubmit, submitButtonLabel}) {
+export default function ExpenseForm({ onCancel, onSubmit, submitButtonLabel }) {
   const [inputValues, setInputValues] = useState({
     amount: "",
     date: "",
@@ -21,7 +20,14 @@ export default function ExpenseForm({onCancel, onSubmit, submitButtonLabel}) {
     });
   }
 
-  function submitHandler() {};
+  function submitHandler() {
+    const expenseData = {
+      amount: +inputValues.amount,
+      date: new Date(inputValues.date),
+      description: inputValues.description,
+    };
+    onSubmit(expenseData);
+  }
 
   return (
     <View style={styles.formStyle}>
