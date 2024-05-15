@@ -12,7 +12,7 @@ export async function fetchExpenses() {
 
   const expenses = [];
 
-console.log("🚀 ~ fetchExpenses ~ response.data:", response.data)
+// console.log("🚀 ~ fetchExpenses ~ response.data:", response.data)
   for (const key in response.data) {
     const expenseObj = {
       id: key,
