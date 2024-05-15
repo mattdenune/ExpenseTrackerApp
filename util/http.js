@@ -3,8 +3,10 @@ import axios from "axios";
 const BACKEND_URL =
   "https://react-native-expense-app-be181-default-rtdb.firebaseio.com/";
 
-export function storeExpense(expenseData) {
-  axios.post(BACKEND_URL + "expenses.json", expenseData);
+export async function storeExpense(expenseData) {
+  const response = await axios.post(BACKEND_URL + "expenses.json", expenseData);
+  const id = response.data.name;
+  return id;
 }
 
 export async function fetchExpenses() {
@@ -12,7 +14,7 @@ export async function fetchExpenses() {
 
   const expenses = [];
 
-// console.log("🚀 ~ fetchExpenses ~ response.data:", response.data)
+  // console.log("🚀 ~ fetchExpenses ~ response.data:", response.data)
   for (const key in response.data) {
     const expenseObj = {
       id: key,
@@ -25,4 +27,3 @@ export async function fetchExpenses() {
 
   return expenses;
 }
-  
