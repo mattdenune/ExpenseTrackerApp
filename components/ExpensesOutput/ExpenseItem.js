@@ -14,12 +14,10 @@ export default function ExpenseItem({ id, description, amount, date }) {
     });
   }
 
-
   return (
     <Pressable
       onPress={expensePressHandler}
       style={({ pressed }) => pressed && styles.pressed}
-      android_ripple={true}
     >
       <View style={styles.expenseItem}>
         <View>
