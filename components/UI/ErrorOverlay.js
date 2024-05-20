@@ -4,7 +4,7 @@ import React from "react";
 import { GlobalStyles } from "../../constants/styles";
 import Button from "./Button";
 
-export default function LoadingOverlay({ message, onConfirm }) {
+export default function ErrorOverlay({ message, onConfirm }) {
   return (
     <View style={styles.container}>
       <Text style={[styles.text, styles.title]}>An error occurred!</Text>
