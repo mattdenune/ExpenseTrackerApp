@@ -61,12 +61,8 @@ export default function ManageExpense({ route, navigation }) {
     }
   }
 
-  function errorHandler() {
-    setError(null);
-  }
-
   if (error && !isSubmitting) {
-    return <ErrorOverlay message={error} onConfirm={errorHandler} />;
+    return <ErrorOverlay message={error} />;
   }
 
   if (isSubmitting) {
